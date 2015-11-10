@@ -10,7 +10,8 @@ end
 
 def location_in_hierarchy (obj, meth_name)    
     cl = obj.class
-    return "\e[33mError: given object doesn't have given methods\e[0m" unless cl.instance_methods(true).include? meth_name.to_sym
+    return "\e[33mError: given object doesn't have given methods\e[0m" 
+    unless cl.instance_methods(true).include? meth_name.to_sym
     while cl.instance_methods(true).include? meth_name.to_sym
        res = "\e[32mHere)) => #{cl}\e[0m"
        cl = cl.superclass
